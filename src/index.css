@@ -1,0 +1,96 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 0 0% 100%; /* Blanco */
+        --foreground: 224 71.4% 4.1%; /* Texto oscuro */
+
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+
+        --primary: 190 50% 30%; /* Azul/Teal del logo FinanEdu */
+        --primary-foreground: 0 0% 100%; /* Texto blanco para primario */
+
+        --secondary: 150 55% 45%; /* Verde del logo FinanEdu */
+        --secondary-foreground: 0 0% 100%; /* Texto blanco para secundario */
+
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220 8.9% 46.1%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 190 50% 30%; /* Azul/Teal para anillos de foco */
+
+        --radius: 0.5rem;
+      }
+
+      .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+
+        --primary: 190 50% 35%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 150 55% 50%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
+
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 190 50% 35%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+      }
+    }
+
+    /* Glassmorphism effect class */
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.1); /* Adjust alpha for more/less transparency */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* For Safari */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .glassmorphism {
+      background: rgba(30, 41, 59, 0.2); /* Darker background for dark mode */
+      border: 1px solid rgba(51, 65, 85, 0.3);
+    }
+    
+    /* Gradient text */
+    .text-gradient-blue-green {
+      @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    }
